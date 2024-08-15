@@ -118,6 +118,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\x56\x57\x8B\x7D\x08\x8B\xF1\x85\xFF\x0F\x84\x2A\x2A\x2A\x2A"
 			}
+			"CCSBot::Blind"
+			{
+				//Has string 'Blinded: holdTime = %3.2f, fadeTime = %3.2f, alpha = %3.2f\n'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xC0\xF3\x0F\x10\x45\x10"
+			}
 			"BotBombStatusMeme::Interpret"
 			{
 				//Is right next to BotBombStatusMeme::`vftable'
@@ -176,11 +182,6 @@
 			{
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
-			}
-			"CCSBot::m_grenadeTossState"
-			{
-				//Just above the string '%3.2f: Grenade: FINISH_THROW\n'
-				"windows"	   "23404"
 			}
 			"Weapon_Switch"
 			{
@@ -298,7 +299,7 @@
 				"windows"
 				{
 					"offset"	"989h"
-					"verify"	"\x51\x8B\xCB\xE8\x0F\x76\x00\x00\x84\xC0"
+					"verify"	"\x51\x8B\xCB\xE8\xEF\x75\x00\x00\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
@@ -308,7 +309,7 @@
 				"windows"
 				{
 					"offset"	"9A4h"
-					"verify"	"\x8B\xCB\x50\xE8\xE4\x79\x00\x00"
+					"verify"	"\x8B\xCB\x50\xE8\xC4\x79\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
@@ -320,6 +321,16 @@
 					"offset"	"93h"
 					"verify"	"\x39\x86\x88\x3E\x00\x00\x75\x37"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
+				}
+			}
+			"CCSBot::Blind::DontWait"
+			{
+				"signature" "CCSBot::Blind"
+				"windows"
+				{
+					"offset"	"73h"
+					"verify"	"\xF3\x0F\x10\x48\x10"
+					"patch"		"\x90\x90\x90\x90\x90"
 				}
 			}
 		}

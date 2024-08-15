@@ -60,7 +60,7 @@ ArrayList g_ArrayCTAgents;
 ArrayList g_ArrayMapWeapons;
 
 int g_iKnifeDefIndex[] =  {
-	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525
+	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526
 };
 
 Handle g_hSetRank;
@@ -886,7 +886,7 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	return Plugin_Continue;
 }
 
-Action WeaponCanUsePre(int client, int iWeapon, bool & bPickup)
+Action WeaponCanUsePre(int client, int iWeapon, bool &bPickup)
 {
 	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iWeapon);
 	if (eItems_IsDefIndexKnife(iDefIndex))
